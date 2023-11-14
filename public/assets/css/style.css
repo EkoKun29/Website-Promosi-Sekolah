@@ -640,6 +640,14 @@ a:hover {
   height: 600px;
 }
 
+#hero-satu{
+  background-image: url('../../assets/img/siswa.JPG');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+}
+
 .hero-title{
   padding-top: 100px;
 }

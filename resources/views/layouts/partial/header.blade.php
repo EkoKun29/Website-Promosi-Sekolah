@@ -8,32 +8,28 @@
                         <!-- Logo -->
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="{{ route('home') }}">
                                     <div class="logo-container">
                                         <img src="{{ asset('assets/img/LOGO_KESUMA.png')}}" height="70" width="55" alt="">
-                                       <h5>SMK KESUMA MARGOYOSO</h5>
+                                       <h6><b>SMK KESUMA MARGOYOSO PATI</b></h6>
                                     </div>
                                 </a>
                             </div>
                             
                         </div>
-                        <div class="col-xl-10 col-lg-10">
+                        <div class="col-xl-10 col-lg-3">
                             <div class="menu-wrapper  d-flex align-items-center justify-content-end">
                                 <!-- Main-menu -->
                                 <div class="main-menu d-none d-lg-block">
                                     <nav> 
                                         <ul id="navigation">                                                                                          
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="services.html">Services</a></li>
-                                            <li><a href="blog.html">Blog</a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="blog_details.html">Blog Details</a></li>
-                                                    <li><a href="elements.html">Element</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="{{ route('_profile') }}">PROFILE</a></li>
+                                            <li><a href="about.html">BERITA</a></li>
+                                            <li><a href="services.html">GALERI</a></li>
+                                            <li><a href="blog.html">GURU</a></li>
+                                            <li><a href="contact.html">KONSENTRASI</a></li>
+                                            <li><a href="contact.html">HUBUNGI KAMI</a></li>
+                                            <li><a href="contact.html">LOKER</a></li>
                                         </ul>
                                     </nav>
                                 </div>

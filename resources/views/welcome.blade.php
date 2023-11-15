@@ -12,61 +12,6 @@
     </div>
 </section>
 
-{{-- <section id="program" style="margin-top: -30px">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-2">
-          <div class="card bg-white rounded-3 shadow p-3 d-flex align-items-center">
-            <div>
-              <h5 align="center">AKUNTANSI <br> 374 peserta</h5>
-            </div>
-            <img src="{{ asset('assets/img/akn.png') }}" height="55" width="55" alt="">
-          </div>
-        </div>
-        <div class="col-lg-2">
-          <div class="card bg-white rounded-3 shadow p-3 d-flex align-items-center">
-            <div>
-              <h5 align="center">TJKT <br> 369 peserta</h5>
-            </div>
-            <img src="{{ asset('assets/img/tkj.png') }}" height="55" width="55" alt="">
-          </div>
-        </div>
-        <div class="col-lg-2">
-          <div class="card bg-white rounded-3 shadow p-3 d-flex align-items-center">
-            <div>
-              <h5 align="center">TAV <br> 123 peserta</h5>
-            </div>
-            <img src="{{ asset('assets/img/av.png') }}" height="55" width="55" alt="">
-          </div>
-        </div>
-        <div class="col-lg-2">
-          <div class="card bg-white rounded-3 shadow p-3 d-flex align-items-center">
-            <div>
-              <h5 align="center">TAB <br> 248 peserta</h5>
-            </div>
-            <img src="{{ asset('assets/img/tab.png') }}" height="55" width="55" alt="">
-          </div>
-        </div>
-        <div class="col-lg-2">
-          <div class="card bg-white rounded-3 shadow p-3 d-flex align-items-center">
-            <div>
-              <h5 align="center">TSM <br> 481 peserta</h5>
-            </div>
-            <img src="{{ asset('assets/img/tsm.png') }}" height="55" width="55" alt="">
-          </div>
-        </div>
-        <div class="col-lg-2">
-          <div class="card bg-white rounded-3 shadow p-3 d-flex align-items-center">
-            <div>
-              <h5 align="center">TKR <br> 496 peserta</h5>
-            </div>
-            <img src="{{ asset('assets/img/tkr.png') }}" height="55" width="55" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> --}}
-
     <!-- slider Area End-->
     <!--? Categories Area Start -->
     <div class="categories-area section-padding30">

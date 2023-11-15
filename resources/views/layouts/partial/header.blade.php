@@ -18,7 +18,7 @@
                             
                         </div>
                         <div class="col-xl-10 col-lg-3">
-                            <div class="menu-wrapper  d-flex align-items-center justify-content-end">
+                            <div class="menu-wrapper d-flex align-items-center justify-content-end">
                                 <!-- Main-menu -->
                                 <div class="main-menu d-none d-lg-block">
                                     <nav> 
@@ -29,8 +29,18 @@
                                             <li><a href="blog.html">GURU</a></li>
                                             <li><a href="contact.html">KONSENTRASI</a></li>
                                             <li><a href="contact.html">HUBUNGI KAMI</a></li>
-                                            <li><a href="contact.html">LOKER</a></li>
+                                            <li><a href="contact.html">KARIER</a></li>
                                         </ul>
+                                        <div class="d-flex">
+                                            @auth
+                                             <form action="/logout" method="POST">
+                                            @csrf
+                                            <button type="submit" id="loginBtn" class="btn btn-dark">Logout</button>
+                                            </form>   
+                                            @else
+                                            <button class="btn btn-danger" id="loginBtn" onclick="changeColor()" >Register</button>
+                                            @endauth
+                                          </div>
                                     </nav>
                                 </div>
                             </div>

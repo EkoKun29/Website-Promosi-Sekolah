@@ -2,7 +2,7 @@
 @section('content')
 <section style="margin-top: 100px">
     <div class="container col-xxl-8 py-5">
-        <h3 class="fw-bold mb-3">Halaman Dashboard Admin</h3>
+        <h4 class="fw-bold mb-3">Halaman Berita</h4>
         <p>Selamat datang di halaman dashboard admin</p>
         
         <div class="row">
@@ -12,7 +12,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Blog Berita</h5>
                       <p class="card-text">Jumlah peserta didik dalam setiap konsentrasi keahlian.</p>
-                      <a href="#" class="btn btn-primary">Detail</a>
+                      <a href="{{ route('berita') }}" class="btn btn-primary">Detail</a>
                     </div>
                   </div>
             </div>

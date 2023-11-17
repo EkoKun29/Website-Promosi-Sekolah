@@ -3,7 +3,33 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>SMK KESUMA MARGOYOSO</title>
+	{{-- Meta untuk tampil di Whatsapp --}}
+    <title>SMK KESUMA MARGOYOSO PATI</title>
+     
+    @if (Request::segment(1) == '')
+        <meta property="og:title" content="Pesantren Al Hijrah" />
+        <meta name="description" content="Pesantren Moderan dengan Fasilitas Lengkap" />
+        <meta property="og:url" content="http://smkkesumamargoyoso.com" />
+        <meta property="og:description" content="SMK KESUMA MARGOYOSO" />
+        <meta property="og:image" content="{{ asset('assets/img/LOGO-KESUMA.ico') }}" />
+        <meta property="og:type" content="article" />
+        <title>SMK KESUMA MARGOYOSO PATI</title>
+    @elseif (Request::segment(1) == 'detail')
+        <meta property="og:title" content="{{ $berita->judul }}" />
+        <meta name="description" content="{{ $berita->judul }}" />
+        <meta property="og:url" content="http://pesantrenalhijrah.com/detail/{{ $berita->slug }}" />
+        <meta property="og:description" content="{{ $berita->judul }}" />
+        @if ($berita->image)
+            <meta property="og:image" content="{{ asset('storage/artikel/' . $berita->image) }}" />
+        @else
+            <meta property="og:image" content="{{ asset('assets/icons/ic-logo.png') }}" />
+        @endif
+        <meta property="og:type" content="article" />
+
+        <title>SMK KESUMA MARGOYOSO PATI | {{ $berita->title }}</title>
+    @endif
+
+    {{-- Meta untuk tampil di Whatsapp --}}
     <link rel="shortcut icon" href="{{ asset ('assets/img/LOGO-KESUMA.ico')}}">
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">

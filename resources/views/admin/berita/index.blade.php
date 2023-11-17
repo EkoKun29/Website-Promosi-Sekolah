@@ -27,9 +27,8 @@
                             <td>{{ $b->judul }}</td>
                             <td>
                                 <a href="{{ route('berita.edit', $b->id) }}" class="btn btn-warning">Edit</a>
-                                <form action="{{ route('berita.hapus', $b->id) }}" method="POST">
+                                <form action="{{ route('berita.hapus', $b->id) }}" method="POST" class="d-inline">
                                     @csrf
-                                    @method('DELETE')
                                     <button type="submit" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data')" class="btn btn-danger">Hapus</button>
                                 </form>
                             </td>

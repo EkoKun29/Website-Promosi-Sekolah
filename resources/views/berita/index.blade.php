@@ -1,18 +1,35 @@
 @extends('layouts.main')
 @section('content')
-<div class="row py-5" data-aos="flip-up">
-    @foreach($berita as $item)
-    <div class="col-lg-6 col-md-6 col-sm-10">
-        <div class="single-services mb-100">
-            <div class="services-img">
-                <img src="{{ asset('storage/artikel/' . $item->image) }}" alt="">
-                </div>
-                <div class="services-caption">
-                <span>Strategy planing</span>
-                <p><a href="#">Within the construction industry as their overdraft</a></p>
+
+<div class="services-area section-padding3">
+    <div class="container">
+        <div class="row">
+            <div class="cl-xl-7 col-lg-8 col-md-10">
+                <!-- Section Tittle -->
+                <div class="section-tittle mb-70">
+                    <span>Kabar</span>
+                    <h2>Berita</h2>
+                </div> 
             </div>
         </div>
-    </div>
+        
+        <div class="row py-5" data-aos="flip-up">
+            @foreach($berita as $item)
+            <div class="col-lg-4">
+                <div class="card border-0">
+                    <img src="{{ asset('storage/artikel/' . $item->image) }}" alt="">
+                    <div class="services-img">
+                        
+                        </div>
+                        <div class="services-caption">
+                            <p class="mb-3 text-secondary">{{ $item->created_at }}</p>
+                            <h4 class="fw-bold mb-3">{{ $item->judul }}</h4>
+                            <a href="{{ route('app.slug', $item->slug) }}"
+                                class="text-decoration-none text-danger">Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
     @endforeach
+</div>
 </div>
 @endsection

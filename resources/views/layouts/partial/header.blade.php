@@ -24,9 +24,9 @@
                                     <nav> 
                                         <ul id="navigation">                                                                                          
                                             <li><a href="{{ route('_profile') }}">PROFILE</a></li>
-                                            <li><a href="about.html">BERITA</a></li>
-                                            <li><a href="services.html">GALERI</a></li>
-                                            <li><a href="blog.html">GURU</a></li>
+                                            <li><a href="{{ route('app.berita') }}">BERITA</a></li>
+                                            <li><a href="{{ route('app.photo') }}">GALERI</a></li>
+                                            <li><a href="{{ route('app.guru') }}">GURU</a></li>
                                             <li><a href="contact.html">KONSENTRASI</a></li>
                                             <li><a href="contact.html">HUBUNGI KAMI</a></li>
                                             <li><a href="contact.html">KARIER</a></li>

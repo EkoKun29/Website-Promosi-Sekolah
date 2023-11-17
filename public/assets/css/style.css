@@ -133,6 +133,13 @@
   width: 220px;
 }
 
+/* CSS */
+textarea {
+    resize: none; /* Mencegah textarea untuk diresize oleh user */
+    width: 100%; /* Mengatur lebar textarea agar mengisi seluruh ruang yang tersedia */
+    height: 150px; /* Atur tinggi sesuai yang diinginkan */
+}
+
 /*--
     - Overlay
 ------------------------------------------*/

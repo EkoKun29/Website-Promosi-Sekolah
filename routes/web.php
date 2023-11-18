@@ -10,6 +10,7 @@ use App\Http\Controllers\Appcontroller;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\KonsentrasiController;
+use App\Http\Controllers\KarierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,14 +39,20 @@ Route::get('/detail/{slug}', [Appcontroller::class, 'detail'])->name('app.slug')
 //-------------------------------Galeri----------------------------------
 Route::get('/Foto-Kegiatan', [Appcontroller::class, 'galeri'])->name('app.photo');
 
-//-------------------------------Galeri----------------------------------
+//-------------------------------Guru----------------------------------
 Route::get('/Guru', [Appcontroller::class, 'guru'])->name('app.guru');
+Route::get('/guru/search', [Gurucontroller::class, 'guru'])->name('guru.search');
+
 
 //-------------------------------Konsentrasi----------------------------------
 Route::get('/Konsentrasi', [Appcontroller::class, 'konsentrasi'])->name('app.konsentrasi');
 
-Route::post('/login', [AuthController::class, 'authenticate']);
-Route::post('/logout', [AuthController::class, 'logout']);
+//-------------------------------Konsentrasi----------------------------------
+Route::get('/Lowongan-Kerja', [Appcontroller::class, 'karier'])->name('app.karier');
+Route::get('/Loker/{slug}', [Appcontroller::class, 'detailkarier'])->name('app.slugkarier');
+
+Route::post('/login', [AuthController::class, 'authenticate'])->name('login');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 
@@ -61,6 +68,8 @@ Route::get('/photo', [PhotoController::class, 'index'])->name('photo')->middlewa
 Route::post('/photo/store', [PhotoController::class, 'store'])->name('photo.store')->middleware('auth');
 Route::PUT('/photo/update/{id}', [PhotoController::class, 'update'])->name('photo.update')->middleware('auth');
 Route::post('/photo/{id}', [PhotoController::class, 'destroy'])->name('photo.hapus')->middleware('auth');
+Route::get('/photo/{category?}', [PhotoController::class, 'category'])->name('photo.category');
+
 
 Route::get('/guru', [GuruController::class, 'index'])->name('guru')->middleware('auth');
 Route::post('/guru/store', [GuruController::class, 'store'])->name('guru.store')->middleware('auth');
@@ -72,5 +81,12 @@ Route::get('/konsentrasi', [KonsentrasiController::class, 'index'])->name('konse
 Route::post('/konsentrasi/store', [KonsentrasiController::class, 'store'])->name('konsentrasi.store')->middleware('auth');
 Route::PUT('/konsentrasi/update/{id}', [KonsentrasiController::class, 'update'])->name('konsentrasi.update')->middleware('auth');
 Route::post('/konsentrasi/{id}', [KonsentrasiController::class, 'destroy'])->name('konsentrasi.hapus')->middleware('auth');
+Route::get('/photo/{category?}', [KonsentrasiController::class, 'category'])->name('konsentrasi.category');
 
+Route::get('/karier', [KarierController::class, 'index'])->name('karier')->middleware('auth');
+Route::get('/karier/create', [KarierController::class, 'create'])->name('karier.create')->middleware('auth');
+Route::post('/karier/store', [KarierController::class, 'store'])->name('karier.store')->middleware('auth');
+Route::get('/karier/edit/{id}', [KarierController::class, 'edit'])->name('karier.edit')->middleware('auth');
+Route::PUT('/karier/update/{id}', [KarierController::class, 'update'])->name('karier.update')->middleware('auth');
+Route::post('/karier/{id}', [KarierController::class, 'destroy'])->name('karier.hapus')->middleware('auth');
 

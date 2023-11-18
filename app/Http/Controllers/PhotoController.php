@@ -16,11 +16,13 @@ class PhotoController extends Controller
         $rules = [
             'judul' => 'required',
             'image' => 'sometimes|required|max:1000|mimes:jpg,jpeg,png,webp',
+            'kategori' => 'required',
         ];
     
         $messages = [
             'judul.required' => 'Judul wajib diisi!',
             'image.required' => 'Image wajib diisi!',
+            'kategori.required' => 'Kategori wajib diisi',
         ];
     
         $this->validate($request, $rules, $messages);
@@ -31,6 +33,7 @@ class PhotoController extends Controller
             Photo::create([
                 'judul' => $request->judul,
                 'image' => $fileName,
+                'kategori' => $request->kategori,
             ]);
 
             return redirect(route('photo'))->with('success', 'Data berhasil disimpan');
@@ -49,11 +52,13 @@ class PhotoController extends Controller
                 $rules = [
                     'judul' => 'required',
                     'image' => $fileCheck,
+                    'kategori' => 'required',
                 ];
         
                 $messages = [
                     'judul.required' => 'Judul wajib diisi!',
                     'image.required' => 'Judul wajib diisi!',
+                    'kategori.required' => 'Kategori wajib diisi',
                 ];
         
                 $this->validate($request, $rules, $messages);
@@ -76,6 +81,7 @@ class PhotoController extends Controller
                 $photo->update([
                     'judul' => $request->judul,
                     'image' => $checkFileName,
+                    'kategori' => $request->kategori,
                 ]);
         
                 return redirect(route('photo'))->with('success', 'data berhasil di update');
@@ -91,4 +97,15 @@ class PhotoController extends Controller
 
         return redirect(route('photo'))->with('success', 'data berhasil di hapus');
     }
+
+public function category($kategori = null) {
+    if ($kategori === null || $kategori === 'all') {
+        $photo = Photo::all();
+    } else {
+        $photo = Photo::where('kategori', $kategori)->get();
+    }
+
+    return view('galeri.index', compact('photo'));
+}
+
 }

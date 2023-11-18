@@ -93,7 +93,63 @@
   color: #14435c;
 }
 
+
+
 /*------------------- Responsive --------------------------*/
+#hero .btn-get-started {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  line-height: 1;
+  margin: 10px;
+  color: #fff;
+  animation-delay: 0.8s;
+  border: 2px solid #68A4C4;
+}
+
+#hero .btn-get-started:hover {
+  background: #68A4C4;
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+  #hero p {
+    width: 60%;
+  }
+}
+
+#hero-no-slider .btn-get-started {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  line-height: 1;
+  margin: 10px;
+  color: #fff;
+  animation-delay: 0.8s;
+  border: 2px solid #68A4C4;
+}
+
+#hero-no-slider .btn-get-started:hover {
+  background: #68A4C4;
+  color: #fff;
+  text-decoration: none;
+}
+@media (max-width: 575px) {
+  #hero-no-slider h2 {
+    font-size: 30px;
+  }
+}
 /*
 	@include transition(.4s);
 	color:$theme-color;
@@ -558,7 +614,6 @@ hr {
   top: 0;
   width: 101%;
   height: 101%;
-  background: grey;
   color: #000 !important;
   z-index: 1;
   transition: transform 0.5s;
@@ -639,9 +694,21 @@ a:hover {
   border: 0;
 }
 
-#navigation li {
-  margin-right: 10px; /* Adjust the value as needed */
+#navigation li.active {
+  color: black; /* Warna hitam */
+  font-weight: bold; /* Teks tebal */
+  /* Gaya tambahan yang diinginkan */
 }
+
+/* Contoh penyesuaian warna latar belakang dan warna teks */
+.navbar {
+  background-color: #f8f9fa; /* Ganti dengan warna latar belakang yang diinginkan */
+}
+
+.navbar-nav .nav-link {
+  color: #333; /* Ganti dengan warna teks yang diinginkan */
+}
+
 
 
 #hero{
@@ -659,6 +726,15 @@ a:hover {
   background-position: center;
   height: 400px;
 }
+
+#hero-second{
+  background-image: url('../../assets/img/guru.JPG');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+}
+
 
 .hero-title{
   padding-top: 100px;
@@ -3075,7 +3151,7 @@ hero-btn {
   font-weight: 500;
   margin-bottom: 17px;
   text-transform: uppercase;
-  color: #eb566c;
+  color: #ffffff;
   display: inline-block;
   position: relative;
   padding-left: 68px;
@@ -3093,8 +3169,8 @@ hero-btn {
   position: absolute;
   content: "";
   width: 54px;
-  height: 2px;
-  background: #eb566c;
+  height: 5px;
+  background: #ff5100;
   top: 0;
   left: 0px;
   top: 50%;
@@ -3136,6 +3212,12 @@ hero-btn {
 /* line 985, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
 .section-tittle2 h2 {
   color: #fff;
+}
+
+.member-img .image-link.expanded img {
+  transform: scale(2); /* Ubah sesuai kebutuhan */
+  transition: transform 0.5s ease; /* Animasi transisi */
+  z-index: 9999; /* Pastikan gambar muncul di atas yang lain */
 }
 
 @media (max-width: 575px) {
@@ -8306,3 +8388,182 @@ del {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/* TEAM */
+.team {
+  background: #fff;
+  padding-bottom: 30px;
+}
+
+.team .member {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.team .member .member-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.team .member .social {
+  position: absolute;
+  left: 0;
+  bottom: -40px;
+  right: 0;
+  height: 40px;
+  opacity: 0;
+  transition: bottom ease-in-out 0.4s;
+  text-align: center;
+  background: rgba(30, 67, 86, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team .member .social a {
+  transition: color 0.3s;
+  color: #fff;
+  margin: 0 12px;
+  display: inline-block;
+}
+
+.team .member .social a:hover {
+  color: #68A4C4;
+}
+
+.team .member .social i {
+  font-size: 18px;
+  margin: 0 2px;
+}
+
+.team .member .member-info h4 {
+  font-weight: 700;
+  margin: 15px 0 5px 0;
+  font-size: 18px;
+}
+
+.team .member .member-info span {
+  display: block;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: #68A4C4;
+}
+
+.team .member .member-info p {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 26px;
+  color: #666;
+}
+
+.team .member:hover .social {
+  bottom: 0;
+  opacity: 1;
+  transition: bottom ease-in-out 0.4s;
+}
+
+.team .member:hover .social a,
+.team .member:hover .social i {
+  line-height: 0;
+  font-size: 18px;
+}
+
+
+.blue-background {
+        background-color: #ADD8E6; /* Warna biru muda */
+        /* Tambahan gaya CSS lainnya jika diperlukan */
+    }
+
+
+
+  .rectangle {
+      width: 1120; /* Lebar persegi panjang */
+      height: 75px; /* Tinggi persegi panjang */
+      background-color: #f38405; /* Warna latar belakang */
+      position: absolute;
+      top: 50%; /* Menengahkan persegi panjang secara vertikal */
+      left: 50%; /* Menengahkan persegi panjang secara horizontal */
+      transform: translate(-50%, -50%);
+  }
+
+  .portfolio {
+  padding-bottom: 60px;
+}
+
+.portfolio #portfolio-flters {
+  padding: 0;
+  margin: 0 0 35px 0;
+  list-style: none;
+  text-align: center;
+}
+
+.portfolio #portfolio-flters li {
+  cursor: pointer;
+  margin: 0 12px 5px 12px;
+  display: inline-block;
+  padding: 0 4px 6px 4px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #444;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 2px solid #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+.portfolio #portfolio-flters li:hover,
+.portfolio #portfolio-flters li.filter-active {
+  border-color: #68A4C4;
+  color: #68A4C4;
+}
+
+.portfolio .portfolio-item {
+  background: #1e4356;
+  overflow: hidden;
+  min-height: 200px;
+  position: relative;
+  border-radius: 4px;
+  margin: 0 0 30px 0;
+}
+
+.portfolio .portfolio-item img {
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio .portfolio-item .portfolio-info {
+  opacity: 0;
+  position: absolute;
+  transition: all 0.3s linear;
+  text-align: center;
+  top: 10%;
+  left: 0;
+  right: 0;
+}
+
+.portfolio .portfolio-item .portfolio-info h3 {
+  font-size: 22px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.portfolio .portfolio-item .portfolio-info a i {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 28px;
+  transition: 0.3s;
+}
+
+.portfolio .portfolio-item .portfolio-info a i:hover {
+  color: white;
+}
+
+.portfolio .portfolio-item:hover img {
+  opacity: 0.6;
+  transform: scale(1.1);
+}
+
+.portfolio .portfolio-item:hover .portfolio-info {
+  opacity: 1;
+  top: calc(50% - 30px);
+}

@@ -5,6 +5,8 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	{{-- Meta untuk tampil di Whatsapp --}}
     <title>SMK KESUMA MARGOYOSO PATI</title>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
      
     @if (Request::segment(1) == '')
         <meta property="og:title" content="Pesantren Al Hijrah" />
@@ -55,6 +57,10 @@
 @yield('content')
 @include('layouts.partial.footer')
 @include('layouts.partial.script')
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
 <!--? Preloader Start -->
 {{-- <div id="preloader-active">
     <div class="preloader d-flex align-items-center justify-content-center">

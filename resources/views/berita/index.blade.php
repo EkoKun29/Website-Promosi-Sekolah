@@ -1,35 +1,42 @@
 @extends('layouts.main')
 @section('content')
 
-<div class="services-area section-padding3">
+<div class="services-area w-padding2">
     <div class="container">
-        <div class="row">
-            <div class="cl-xl-7 col-lg-8 col-md-10">
+        <div class="row ">
+            <div class="col-xl-12 col-lg-3 rectangle">
                 <!-- Section Tittle -->
-                <div class="section-tittle mb-70">
-                    <span>Kabar</span>
-                    <h2>Berita</h2>
+                <div class="section-tittle mb-50" data-aos="zoom-out-right">
+                    <span><h2>Kabar Berita</h2></span>
+                    
                 </div> 
             </div>
         </div>
-        
-        <div class="row py-5" data-aos="flip-up">
+
+    <section class="team" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+        <div class="container">
+  
+          <div class="row">
             @foreach($berita as $item)
-            <div class="col-lg-4">
-                <div class="card border-0">
-                    <img src="{{ asset('storage/artikel/' . $item->image) }}" alt="">
-                    <div class="services-img">
-                        
-                        </div>
-                        <div class="services-caption">
-                            <p class="mb-3 text-secondary">{{ $item->created_at }}</p>
-                            <h4 class="fw-bold mb-3">{{ $item->judul }}</h4>
-                            <a href="{{ route('app.slug', $item->slug) }}"
-                                class="text-decoration-none text-danger">Selengkapnya</a>
-                    </div>
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch ">
+              <div class="member blue-background shadow">
+                <div class="member-img">
+                  <img src="{{ asset('storage/artikel/' . $item->image) }}" class="img-fluid" alt="">
+                  <div class="social">
+                    <a href="{{ route('app.slug', $item->slug) }}">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+
+                  </div>
                 </div>
+                <div class="member-info hero-text">
+                    <span><b>{{ $item->created_at }}</b></span>
+                  <h4>{{ $item->judul }}</h4>
+                </div>
+              </div>
             </div>
-    @endforeach
+            @endforeach
+          </div>
+        </div>
+    
 </div>
 </div>
 @endsection

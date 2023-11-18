@@ -2,12 +2,14 @@
 @section('content')
 <section id="hero" class="px-0">
     <div class="container text-center text-white">
-        <div class="hero-title">
+        <div class="hero-title" data-aos="fade-up">
         <div class="hero-text">Selamat Datang <br> Di Website SMK Kesuma Margoyoso</div>
         <br>
           <h4>Tidak ada yang lebih baik dari hari ini untuk memulai kesuksesan masa depanmu.
              Awali dengan langkah dan tempat yang baik.
           </h4>
+          <a href="{{ route('login') }}" class="btn-get-started animate__animated animate__fadeInUp">LOGIN</a>
+          <a href="https://pppdb.smkkesumamargoyoso.sch.id/" class="btn-get-started animate__animated animate__fadeInUp">DAFTAR SEKARANG</a>
         </div>
     </div>
 </section>
@@ -19,7 +21,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <!-- Section Tittle -->
-                    <div class="section-tittle mb-70">
+                    <div class="section-tittle mb-70" data-aos="fade-right">
                         <span>Jumlah Peserta</span>
                         <h2>Konsentrasi Keahlian</h2>
                     </div>
@@ -107,7 +109,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 pt-100 ">
-                    <div class="support-location-img">
+                    <div class="support-location-img" data-aos="zoom-in">
                         <img src="{{ asset ('assets/img/siswa.JPG')}}" alt="">
                         <br>
                         <br>
@@ -120,13 +122,15 @@
                 <div class="col-xl-5">
                     <div class="right-caption">
                         <!-- Section Tittle -->
-                        <div class="section-tittle section-tittle2 mb-50">
+                        <div class="section-tittle section-tittle2 mb-50" data-aos="fade-down"
+                        data-aos-easing="linear"
+                        data-aos-duration="1500">
                             <span>Mengapa</span>
                             <h2>SMK Kesuma Margoyoso Pati</h2>
                         </div>
                         <div class="support-caption">
                             <div class="col-lg-15">
-                                <div class="bg-white rounded-3 shadow p-3 d-flex align-items-center">
+                                <div class="bg-white rounded-3 shadow p-3 d-flex align-items-center" data-aos="zoom-in-up">
                                   <div>
                                     <h5><b> <u>FASILITAS </u> </b> <br> 
                                         Fasilitas penunjang pembelajaran lengkap dan nyaman. Laboratorium, bengkel, akses internet dan provider</h5>
@@ -134,7 +138,7 @@
                                   <img src="{{ asset('assets/img/building.png') }}" height="70" width="70" alt="">
                                 </div>
                                 <br>
-                                <div class="bg-white rounded-3 shadow p-3 d-flex align-items-center">
+                                <div class="bg-white rounded-3 shadow p-3 d-flex align-items-center" data-aos="zoom-in-up">
                                     <div>
                                       <h5><b> <u>PRESTASI </u> </b> <br> 
                                         Aktif menjuarai Lomba Kompetensi Siswa Nasional (LKSN) dan berbagai ajang lomba lainnya. baik tingkat provinsi maupun nasional.</h5>
@@ -143,7 +147,7 @@
                                   </div>
 
                                 <br>
-                                <div class="bg-white rounded-3 shadow p-3 d-flex align-items-center">
+                                <div class="bg-white rounded-3 shadow p-3 d-flex align-items-center" data-aos="zoom-in-up">
                                     <div>
                                       <h5><b> <u>KURIKULUM </u> </b> <br> 
                                         Sebagai Sekolah Pusat Keunggulan, menerapkan Kurikulum Merdeka dan terintegrasi pada jurusan, serta mengimplementasikan Gerakan Sekolah Menyenangkan.</h5>
@@ -152,7 +156,7 @@
                                   </div>
 
                                   <br>
-                                  <div class="bg-white rounded-3 shadow p-3 d-flex align-items-center">
+                                  <div class="bg-white rounded-3 shadow p-3 d-flex align-items-center" data-aos="zoom-in-up">
                                     <div>
                                       <h5><b> <u>KERJASAMA </u> </b> <br> 
                                         Menjalin kerjasama dengan berbagai lembaga dan perusahaan multinasional.</h5>
@@ -161,7 +165,7 @@
                                   </div>
 
                                   <br>
-                                  <div class="bg-white rounded-3 shadow p-3 d-flex align-items-center">
+                                  <div class="bg-white rounded-3 shadow p-3 d-flex align-items-center" data-aos="zoom-in-up">
                                     <div>
                                       <h5><b> <u>DIGITAL MARKETING </u> </b> <br> 
                                         Pionir dalam penerapan Digital Marketing di sekolah.</h5>
@@ -170,7 +174,7 @@
                                   </div>
 
                                   <br>
-                                  <div class="bg-white rounded-3 shadow p-3 d-flex align-items-center">
+                                  <div class="bg-white rounded-3 shadow p-3 d-flex align-items-center" data-aos="zoom-in-up">
                                     <div>
                                       <h5><b> <u>KEWIRAUSAHAAN </u> </b> <br> 
                                         Mengembangkan program pembelajaran kewirausahaan dan mendukung aktivitas wirausaha siswa.</h5>

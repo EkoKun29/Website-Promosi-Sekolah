@@ -3,21 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Berita;
+use App\Models\Karier;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
-class BeritaController extends Controller
+class KarierController extends Controller
 {
     public function index(){
-        return view('admin.berita.index',[
-            'berita' => Berita::orderBy('id', 'desc')->get()
-        ]);
+       $karier = Karier::orderBy('id', 'desc')->get();
+       return view('admin.karier.index', compact('karier'));
     }
 
     public function create(){
-        return view('admin.berita.create');
+        return view('admin.karier.create');
     }
 
     public function store(Request $request) {
@@ -39,7 +38,7 @@ class BeritaController extends Controller
     
         if ($request->hasFile('image')) {
             $fileName = time() . '.' . $request->image->extension();
-            $request->file('image')->storeAs('public/artikel', $fileName);
+            $request->file('image')->storeAs('public/karier', $fileName);
         }
     
         $content = $request->input('desc') ?: '';
@@ -47,25 +46,25 @@ class BeritaController extends Controller
         // Manipulasi gambar jika diperlukan
         // Pastikan GD Library telah diinstal dan aktif
     
-        Berita::create([
+        Karier::create([
             'judul' => $request->judul,
             'slug' => Str::slug($request->judul, '-'),
             'image' => $fileName,
             'desc' => $content,
         ]);
     
-        return redirect(route('berita'))->with('success', 'Data berhasil disimpan');
+        return redirect(route('karier'))->with('success', 'Data berhasil disimpan');
     }
     
 
     public function edit($id)
     {
-        $berita = Berita::where('id', $id)->first();
-        return view('admin.berita.edit',compact('berita'));
+        $karier = Karier::where('id', $id)->first();
+        return view('admin.karier.edit',compact('karier'));
     }
 
     public function update(Request $request, $id){
-        $berita = Berita::find($id);
+        $karier = Karier::find($id);
 
         # Jika ada image baru
         if ($request->hasFile('image')) {
@@ -90,11 +89,11 @@ class BeritaController extends Controller
 
         // Cek jika ada image baru
         if ($request->hasFile('image')) {
-            if (\File::exists('storage/artikel/' . $berita->image)) {
-                \File::delete('storage/artikel/' . $request->old_image);
+            if (\File::exists('storage/karier/' . $karier->image)) {
+                \File::delete('storage/karier/' . $request->old_image);
             }
             $fileName = time() . '.' . $request->image->extension();
-            $request->file('image')->storeAs('public/artikel', $fileName);
+            $request->file('image')->storeAs('public/karier', $fileName);
         }
 
         if ($request->hasFile('image')) {
@@ -128,24 +127,22 @@ class BeritaController extends Controller
             }
         }
 
-        $berita->update([
+        $karier->update([
             'judul' => $request->judul,
             'image' => $checkFileName,
             'desc' => $dom->saveHTML(),
         ]);
 
-        return redirect(route('berita'))->with('success', 'data berhasil di update');
+        return redirect(route('karier'))->with('success', 'data berhasil di update');
     }
 
     public function destroy($id){
-        $berita = Berita::find($id);
-        if (\File::exists('storage/artikel/' . $berita->image)) {
-            \File::delete('storage/artikel/' . $berita->image);
+        $karier = Karier::find($id);
+        if (\File::exists('storage/karier/' . $karier->image)) {
+            \File::delete('storage/karier/' . $karier->image);
         }
-        $berita->delete();
+        $karier->delete();
     
         return redirect()->back()->with('success', 'Data berhasil dihapus');
     }
-    
-    
 }

@@ -3,7 +3,7 @@
 <main>
     <section id="hero-satu" class="px-0">
         <div class="container text-center text-white">
-            <div class="hero-title">
+            <div class="hero-title" data-aos="fade-right">
             <div class="hero-text">Profile <br> SMK Kesuma Margoyoso Pati</div>
             </div>
         </div>
@@ -13,7 +13,7 @@
     <section id="program" style="margin-top: -50px">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 col mb-2" data-aos="flip-left">
               <div class="bg-white rounded-3 shadow p-3 d-flex align-items-center">
                 <img src="{{ asset('assets/img/iso.png') }}" height="70" width="70" alt="">
                 <div>
@@ -22,7 +22,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 col mb-2" data-aos="flip-right">
               <div class="bg-white rounded-3 shadow p-3 d-flex align-items-center">
                 <img src="{{ asset('assets/img/sekolah.png') }}" height="70" width="70" alt="">
                 <div>
@@ -38,7 +38,7 @@
         <div class="categories-area section-padding30">
         <div class="container">
             <div class="col-lg-12">
-                <div class="section-tittle mb-70">
+                <div class="section-tittle mb-70" data-aos="fade-right">
             <span><h2>Tentang Sekolah</h2></span>
                 </div>
           </div>

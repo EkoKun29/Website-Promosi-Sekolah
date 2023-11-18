@@ -103,4 +103,18 @@ class GuruController extends Controller
 
         return redirect(route('guru'))->with('success', 'data berhasil di hapus');
     }
+
+    public function search(Request $request)
+{
+    $search = $request->input('search');
+
+    $guru = Guru::where('nama', 'like', '%' . $search . '%')
+                ->orWhere('bidang', 'like', '%' . $search . '%')
+                ->orWhere('desc', 'like', '%' . $search . '%')
+                ->orderBy('id', 'desc')
+                ->get();
+
+    return view('admin.guru.index', compact('guru'));
+}
+
 }

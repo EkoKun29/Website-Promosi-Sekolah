@@ -7,6 +7,7 @@ use App\Models\Berita;
 use App\Models\Photo;
 use App\Models\Guru;
 use App\Models\Konsentrasi;
+use App\Models\Karier;
 
 class Appcontroller extends Controller
 {
@@ -29,7 +30,7 @@ class Appcontroller extends Controller
 
     //------------------Guru------------------------
     public function guru(){
-        $guru = Guru::orderBy('id', 'desc')->get();
+        $guru = Guru::orderBy('id', 'desc')->paginate(10);;
         return view('guru.index', compact('guru'));
     }
 
@@ -38,4 +39,17 @@ class Appcontroller extends Controller
         $konsentrasi = Konsentrasi::orderBy('id', 'desc')->get();
         return view('konsentrasi.index', compact('konsentrasi'));
     }
+
+    //-----------------Karier----------------------
+    public function karier(){
+        $karier = Karier::orderBy('id', 'desc')->get();
+        return view('karier.index', compact('karier'));
+    }
+
+    public function detailkarier($slug){
+        $karier = Karier::where('slug', $slug)->first();
+
+        return view('karier.detail', compact('karier'));
+    }
+
 }

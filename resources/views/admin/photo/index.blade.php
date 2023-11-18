@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('content')
+
 <section class="py-5" style="margin-top: 100px">
     <div class="container col-xxl-8">
         <h4>Halaman Photo Kegiatan</h4>
@@ -116,6 +117,16 @@
                     <div class="form-group mb-3">
                         <label for="">Nama Kegiatan</label>
                         <input type="text" name="judul" class="form-control">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="">Kategori</label>
+                        <select name="kategori" class="form-select">
+                            <option value="KEGIATAN">KEGIATAN</option>
+                            <option value="PRESTASI">PRESTASI</option>
+                            <option value="FASILITAS">FASILITAS</option>
+                            <!-- Tambahkan lebih banyak option sesuai dengan jurusan yang diinginkan -->
+                        </select>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Simpan</button>

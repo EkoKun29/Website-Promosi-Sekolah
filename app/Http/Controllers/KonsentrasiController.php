@@ -103,4 +103,14 @@ class KonsentrasiController extends Controller
 
         return redirect(route('konsentrasi'))->with('success', 'data berhasil di hapus');
     }
+
+    public function category($jurusan = null) {
+        if ($jurusan === null || $jurusan === 'all') {
+            $konsentrasi = Konsentrasi::all();
+        } else {
+            $konsentrasi = Konsentrasi::where('jurusan', $jurusan)->get();
+        }
+    
+        return view('konsentrasi.index', compact('konsentrasi'));
+    }
 }

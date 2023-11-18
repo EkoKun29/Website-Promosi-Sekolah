@@ -46,6 +46,16 @@
                 </div>
               </div>
         </div>
+        <div class="col-lg-4">
+          <div class="card shadow-sm rounded-3 border-0" >
+              <img src="{{ asset('assets/img/TAB/tab1.JPG') }}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Konsentrasi Keahlian</h5>
+                <p class="card-text">Guru SMK Kesuma</p>
+                <a href="{{ route('karier') }}" class="btn btn-primary">Detail</a>
+              </div>
+            </div>
+      </div>
         </div>
     </div>
 </section>

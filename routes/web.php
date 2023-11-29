@@ -50,7 +50,7 @@ Route::get('/Foto-Kegiatan', [Appcontroller::class, 'galeri'])->name('app.photo'
 
 //-------------------------------Guru----------------------------------
 Route::get('/Guru', [Appcontroller::class, 'guru'])->name('app.guru');
-Route::get('/Guru/search', [Gurucontroller::class, 'search'])->name('guru.search');
+Route::get('/Guru/search', [Appcontroller::class, 'search'])->name('guru.search');
 
 //-------------------------------Kontak----------------------------------
 Route::get('/Hubungi-Kami', [Kontakcontroller::class, 'index'])->name('contac');

@@ -8,10 +8,10 @@
     </div>
 </section>
 
-<div style="float: right; background-color: #3498db; padding: 10px; border-radius: 5px;">
+<div style="float: right; background-color:  #3EB489; padding: 10px; border-radius: 5px;">
     <form action="{{ route('guru.search') }}" method="GET">
         <input type="text" name="search" placeholder="Cari Guru" style="padding: 5px;">
-        <button type="submit" style="padding: 5px; background-color: #2980b9; color: white; border: none; border-radius: 3px;">Cari</button>
+        <button type="submit" style="padding: 5px; background-color:  #3EB489; color: white; border: none; border-radius: 3px;">Cari</button>
     </form>
 </div>
 

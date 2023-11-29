@@ -30,6 +30,21 @@
 /* line 34, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_color.scss */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+/* .section-foto{
+  background-attachment: fixed;
+  background-position: top;
+  background-size:cover;
+  height: 500px;
+  width:100px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parallax{
+  background-image: ;
+} */
 
 .white-bg {
   background: #ffffff;
@@ -745,10 +760,72 @@ a:hover {
   font-weight: 600;
 }
 
-/* line 342, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
 .hero-btn {
   padding: 30px 38px;
 }
+
+/* Tampilan default */
+#hero-second {
+  background-image: url('../../assets/img/guru.JPG');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+}
+
+.hero-title {
+  padding-top: 100px;
+}
+
+.hero-text {
+  font-size: 75px;
+  font-weight: 600;
+}
+
+.hero-btn {
+  padding: 30px 38px;
+}
+
+/* Responsif untuk layar yang lebih kecil */
+@media screen and (max-width: 768px) {
+  #hero-second {
+    height: 300px; /* Ubah tinggi gambar latar belakang */
+  }
+
+  .hero-title {
+    padding-top: 50px; /* Sesuaikan padding */
+  }
+
+  .hero-text {
+    font-size: 50px; /* Kurangi ukuran teks */
+    font-weight: 500;
+  }
+
+  .hero-btn {
+    padding: 20px 28px; /* Ubah padding tombol */
+  }
+}
+
+/* Responsif untuk layar yang sangat kecil, misalnya ponsel */
+@media screen and (max-width: 480px) {
+  #hero-second {
+    height: 200px; /* Tinggi gambar latar belakang lebih kecil */
+  }
+
+  .hero-title {
+    padding-top: 30px; /* Sesuaikan padding */
+  }
+
+  .hero-text {
+    font-size: 30px; /* Kurangi ukuran teks lebih banyak */
+    font-weight: 300;
+  }
+
+  .hero-btn {
+    padding: 15px 18px; /* Ubah padding tombol */
+  }
+}
+
 
 /* line 345, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
 hero-btn {

@@ -34,6 +34,20 @@ class Appcontroller extends Controller
         return view('guru.index', compact('guru'));
     }
 
+    public function search(Request $request)
+    {
+        $searchTerm = $request->search;
+        $guru = Guru::where(function ($query) use ($searchTerm) {
+            $query->where('name', 'like', '%' . $searchTerm . '%')
+                ->orWhere('bidang', 'like', '%' . $searchTerm . '%')
+                ->orWhere('desc', 'like', '%' . $searchTerm . '%');
+        })
+            ->paginate(10);
+            $guru->appends(['search' => $searchTerm]);
+    
+        return view('guru.index', compact('guru'));
+    }
+
     //------------------Konsentrasi------------------------
     public function konsentrasi(){
         $konsentrasi = Konsentrasi::orderBy('id', 'desc')->get();

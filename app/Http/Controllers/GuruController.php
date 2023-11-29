@@ -104,17 +104,17 @@ class GuruController extends Controller
         return redirect(route('guru'))->with('success', 'data berhasil di hapus');
     }
 
-    public function search(Request $request)
-{
-    $search = $request->input('search');
+//     public function search(Request $request)
+// {
+//     $search = $request->input('search');
 
-    $guru = Guru::where('name', 'like', '%' . $search . '%')
-                ->orWhere('bidang', 'like', '%' . $search . '%')
-                ->orWhere('desc', 'like', '%' . $search . '%')
-                ->orderBy('id', 'desc')
-                ->get();
+//     $guru = Guru::where('name', 'like', '%' . $search . '%')
+//                 ->orWhere('bidang', 'like', '%' . $search . '%')
+//                 ->orWhere('desc', 'like', '%' . $search . '%')
+//                 ->orderBy('id', 'desc')
+//                 ->get();
 
-    return view('guru.index', compact('guru'));
-}
+//     return view('guru.index', compact('guru'));
+// }
 
 }

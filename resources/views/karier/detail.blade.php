@@ -5,7 +5,7 @@
         <div class="d-flex mb-3">
            <a href="/"> Home </a> / <a href="/Kabar-Berita"> Berita </a> / {{ $karier->judul }}
         </div>
-        <img src="{{ asset('storage/karier/' . $karier->image) }}" alt="" class="image-fluid mb-3"
+        <img src="{{ $karier->image_url }}" alt="" class="image-fluid mb-3"
          width="1110">
         <div class="services-area section-padding3">
             <p class="mb-3 text-secondary">{{ $karier->created_at }}</p>

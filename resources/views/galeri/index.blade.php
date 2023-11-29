@@ -27,13 +27,13 @@
                 <a href="{{ route('app.photo') }}" class="btn btn-custom">ALL</a>
             </div>
             <div class="col-lg-auto col-md-auto col-3 text-center mb-4">
-                <a href="{{ route('photo.category', 'kegiatan') }}" class="btn btn-custom">KEGIATAN</a>
+                <a href="{{ route('photo.category', 'KEGIATAN') }}" class="btn btn-custom">KEGIATAN</a>
             </div>
             <div class="col-lg-auto col-md-auto col-3 text-center mb-4">
-                <a href="{{ route('photo.category', 'prestasi') }}" class="btn btn-custom">PRESTASI</a>
+                <a href="{{ route('photo.category', 'PRESTASI') }}" class="btn btn-custom">PRESTASI</a>
             </div>
             <div class="col-lg-auto col-md-auto col-3 text-center mb-4">
-                <a href="{{ route('photo.category', 'fasilitas') }}" class="btn btn-custom">FASILITAS</a>
+                <a href="{{ route('photo.category', 'FASILITAS') }}" class="btn btn-custom">FASILITAS</a>
             </div>
         </div>
         <div class="row" data-aos="fade-up"

@@ -17,7 +17,7 @@
             @foreach($karier as $item)
             <div class="col-lg-4">
                 <div class="card border-0">
-                    <img src="{{ asset('storage/karier/' . $item->image) }}" alt="">
+                    <img src="{{ $item->image_url }}" alt="">
                     <div class="services-img">
                         
                         </div>

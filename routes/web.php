@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\KonsentrasiController;
 use App\Http\Controllers\KarierController;
+use App\Http\Controllers\KontakController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,13 @@ Route::get('/login',function(){
 });
 
 
+
+Route::get('/storage-link', function () {
+     $targetFolder = storage_path('/app');
+   $linkFolder = $_SERVER['DOCUMENT_ROOT'] . '/storage';
+   symlink($targetFolder,$linkFolder);
+});
+
 Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
 //-------------------------------Berita----------------------------------
 Route::get('/Kabar-Berita', [Appcontroller::class, 'index'])->name('app.berita');
@@ -41,7 +50,10 @@ Route::get('/Foto-Kegiatan', [Appcontroller::class, 'galeri'])->name('app.photo'
 
 //-------------------------------Guru----------------------------------
 Route::get('/Guru', [Appcontroller::class, 'guru'])->name('app.guru');
-Route::get('/guru/search', [Gurucontroller::class, 'guru'])->name('guru.search');
+Route::get('/Guru/search', [Gurucontroller::class, 'search'])->name('guru.search');
+
+//-------------------------------Kontak----------------------------------
+Route::get('/Hubungi-Kami', [Kontakcontroller::class, 'index'])->name('contac');
 
 
 //-------------------------------Konsentrasi----------------------------------
@@ -81,7 +93,7 @@ Route::get('/konsentrasi', [KonsentrasiController::class, 'index'])->name('konse
 Route::post('/konsentrasi/store', [KonsentrasiController::class, 'store'])->name('konsentrasi.store')->middleware('auth');
 Route::PUT('/konsentrasi/update/{id}', [KonsentrasiController::class, 'update'])->name('konsentrasi.update')->middleware('auth');
 Route::post('/konsentrasi/{id}', [KonsentrasiController::class, 'destroy'])->name('konsentrasi.hapus')->middleware('auth');
-Route::get('/photo/{category?}', [KonsentrasiController::class, 'category'])->name('konsentrasi.category');
+Route::get('/konsentrasi/{category?}', [KonsentrasiController::class, 'category'])->name('konsentrasi.category');
 
 Route::get('/karier', [KarierController::class, 'index'])->name('karier')->middleware('auth');
 Route::get('/karier/create', [KarierController::class, 'create'])->name('karier.create')->middleware('auth');

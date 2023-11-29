@@ -42,7 +42,7 @@
                         <td>{{ $g->name }}</td>
                         <td>{{ $g->bidang }}</td>
                         <td>
-                            <img src="{{ asset('storage/guru/'.$g->image) }}" height="150" alt="">
+                            <img src="{{ $g->image_url }}" height="150" alt="">
                         </td>
                         <td>{{ $g->desc }}</td>
                         <td>

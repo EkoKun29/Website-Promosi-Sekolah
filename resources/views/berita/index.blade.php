@@ -21,7 +21,7 @@
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch ">
               <div class="member blue-background shadow">
                 <div class="member-img">
-                  <img src="{{ asset('storage/artikel/' . $item->image) }}" class="img-fluid" alt="">
+                  <img src="{{ $item->image_url }}" class="img-fluid" alt="">
                   <div class="social">
                     <a href="{{ route('app.slug', $item->slug) }}">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
 

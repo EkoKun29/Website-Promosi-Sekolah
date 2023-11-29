@@ -43,7 +43,7 @@
                         <td>{{ $k->nama }}</td>
                         <td>{{ $k->jurusan }}</td>
                         <td>
-                            <img src="{{ asset('storage/konsentrasi/'.$k->image) }}" height="150" alt="">
+                            <img src="{{ $k->image_url }}" height="150" alt="">
                         </td>
                         <td>{{ $k->desc }}</td>
                         <td>

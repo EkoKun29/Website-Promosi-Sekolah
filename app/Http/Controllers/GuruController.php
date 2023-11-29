@@ -29,8 +29,8 @@ class GuruController extends Controller
     
         $this->validate($request, $rules, $messages);
     
-            $fileName = time() . '.' . $request->image->extension();
-            $request->file('image')->storeAs('public/guru', $fileName);
+            //$fileName = time() . '.' . $request->image->extension();
+            $fileName = $request->file('image')->storePublicly('guru');
         
             Guru::create([
                 'name' => $request->nama,
@@ -74,7 +74,7 @@ class GuruController extends Controller
                         \File::delete('storage/guru/' . $request->old_image);
                     }
                     $fileName = time() . '.' . $request->image->extension();
-                    $request->file('image')->storeAs('public/photo', $fileName);
+                    $request->file('image')->storeAs('public/guru', $fileName);
                 }
         
                 if ($request->hasFile('image')) {
@@ -108,13 +108,13 @@ class GuruController extends Controller
 {
     $search = $request->input('search');
 
-    $guru = Guru::where('nama', 'like', '%' . $search . '%')
+    $guru = Guru::where('name', 'like', '%' . $search . '%')
                 ->orWhere('bidang', 'like', '%' . $search . '%')
                 ->orWhere('desc', 'like', '%' . $search . '%')
                 ->orderBy('id', 'desc')
                 ->get();
 
-    return view('admin.guru.index', compact('guru'));
+    return view('guru.index', compact('guru'));
 }
 
 }

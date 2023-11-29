@@ -34,12 +34,13 @@ class KarierController extends Controller
     
         $this->validate($request, $rules, $messages);
     
-        $fileName = null;
+        // $fileName = null;
     
-        if ($request->hasFile('image')) {
-            $fileName = time() . '.' . $request->image->extension();
-            $request->file('image')->storeAs('public/karier', $fileName);
-        }
+        // if ($request->hasFile('image')) {
+        //     $fileName = time() . '.' . $request->image->extension();
+        //     $request->file('image')->storeAs('public/karier', $fileName);
+        // }
+         $fileName = $request->file('image')->storePublicly('karier');
     
         $content = $request->input('desc') ?: '';
     

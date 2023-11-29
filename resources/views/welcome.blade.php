@@ -22,7 +22,7 @@
                 <div class="col-lg-12">
                     <!-- Section Tittle -->
                     <div class="section-tittle mb-70" data-aos="fade-right">
-                        <span>Jumlah Peserta</span>
+                        <span style="color: #3EB489;">Jumlah Peserta</span>
                         <h2>Konsentrasi Keahlian</h2>
                     </div>
                 </div>
@@ -192,7 +192,7 @@
     </div>
     <!-- About Area End-->
     <!--? Services Ara Start -->
-    <div class="services-area section-padding3">
+    {{-- <div class="services-area section-padding3">
         <div class="container">
             <div class="row">
                 <div class="cl-xl-7 col-lg-8 col-md-10">
@@ -250,7 +250,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Services Ara End -->
     <!--? Testimonial Start -->
     {{-- <div class="testimonial-area testimonial-padding" data-background="assets/img/gallery/section_bg04.jpg">

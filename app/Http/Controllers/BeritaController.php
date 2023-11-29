@@ -35,13 +35,15 @@ class BeritaController extends Controller
     
         $this->validate($request, $rules, $messages);
     
-        $fileName = null;
+        // $fileName = null;
     
-        if ($request->hasFile('image')) {
-            $fileName = time() . '.' . $request->image->extension();
-            $request->file('image')->storeAs('public/artikel', $fileName);
-        }
-    
+        // if ($request->hasFile('image')) {
+        //     $fileName = time() . '.' . $request->image->extension();
+        //     $request->file('image')->storeAs('public/artikel', $fileName);
+        // }
+        
+        $fileName = $request->file('image')->storePublicly('artikel');
+         
         $content = $request->input('desc') ?: '';
     
         // Manipulasi gambar jika diperlukan

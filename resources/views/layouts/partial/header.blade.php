@@ -10,7 +10,7 @@
                         @if(Auth::user()->id_role == 1)
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
-                                <a href="{{ route('home') }}">
+                                <a href="{{ route('dashboard') }}">
                                     <div class="logo-container" data-aos="fade-down">
                                         <img src="{{ asset('assets/img/LOGO_KESUMA.png')}}" height="70" width="55" alt="">
                                        <h6><b>HALAMAN ADMIN</b></h6>
@@ -30,7 +30,7 @@
                                             <li><a href="{{ route('photo') }}">GALERI</a></li>
                                             <li><a href="{{ route('guru') }}">GURU</a></li>
                                             <li><a href="{{ route('konsentrasi') }}">KONSENTRASI</a></li>
-                                            <li><a href="contact.html">HUBUNGI KAMI</a></li>
+                                            <li><a href="{{ route('contac') }}">HUBUNGI KAMI</a></li>
                                             <li><a href="{{ route('karier') }}">KARIER</a></li>
                                             <li>
                                                 <form action="{{ route('logout') }}" method="POST">
@@ -68,7 +68,7 @@
                                             <li><a href="{{ route('app.photo') }}">GALERI</a></li>
                                             <li><a href="{{ route('app.guru') }}">GURU</a></li>
                                             <li><a href="{{ route('app.konsentrasi') }}">KONSENTRASI</a></li>
-                                            <li><a href="contact.html">HUBUNGI KAMI</a></li>
+                                            <li><a href="{{ route('contac') }}">HUBUNGI KAMI</a></li>
                                             <li><a href="{{ route('app.karier') }}">KARIER</a></li>
                                         </ul>
                                     </nav>
@@ -112,7 +112,7 @@
                                                 <a class="nav-link" href="{{ route('app.konsentrasi') }}">KONSENTRASI</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="contact.html">HUBUNGI KAMI</a>
+                                                <a class="nav-link" href="{{ route('contac') }}">HUBUNGI KAMI</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link" href="{{ route('app.karier') }}">KARIER</a>

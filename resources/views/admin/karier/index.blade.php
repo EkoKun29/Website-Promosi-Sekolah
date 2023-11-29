@@ -22,7 +22,7 @@
                         <tr>
                             <td>{{ $no++ }}</td>
                             <td>
-                                <img src="{{ asset('storage/karier/'.$kr->image) }}" height="100" alt="">
+                                <img src="{{ $kr->image_url }}" height="100" alt="">
                             </td>
                             <td>{{ $kr->judul }}</td>
                             <td>

@@ -1,3 +1,39 @@
+<style>
+    .search-bar {
+    float: right;
+    /*background-color:  #3EB489;*/
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.search-input {
+    padding: 8px; /* Memperbesar padding untuk tampilan yang lebih baik di seluler */
+    width: 200px; /* Lebar input default */
+}
+
+.search-button {
+    padding: 8px 15px; /* Memperbesar padding untuk tampilan yang lebih baik di seluler */
+    background-color:  #3EB489;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Gaya untuk tampilan handphone */
+@media (max-width: 600px) {
+    .search-bar {
+        float: none;
+        text-align: center;
+    }
+
+    .search-input,
+    .search-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+</style>
 @extends('layouts.main')
 @section('content')
 <section id="hero-second" class="px-0">
@@ -8,12 +44,13 @@
     </div>
 </section>
 
-<div style="float: right; background-color:  #3EB489; padding: 10px; border-radius: 5px;">
+<div class="search-bar">
     <form action="{{ route('guru.search') }}" method="GET">
-        <input type="text" name="search" placeholder="Cari Guru" style="padding: 5px;">
-        <button type="submit" style="padding: 5px; background-color:  #3EB489; color: white; border: none; border-radius: 3px;">Cari</button>
+        <input type="text" name="search" placeholder="Cari Guru" class="search-input">
+        <button type="submit" class="search-button">CARI</button>
     </form>
 </div>
+
 
 <div class="services-area ">
     <div class="container">

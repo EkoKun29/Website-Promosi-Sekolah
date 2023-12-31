@@ -22,8 +22,8 @@ class KarierController extends Controller
     public function store(Request $request) {
         $rules = [
             'judul' => 'required',
-            'image' => 'sometimes|required|max:1000|mimes:jpg,jpeg,png,webp',
-            'desc' => 'nullable|min:20',
+            'image' => 'sometimes|required|max:5000|mimes:jpg,jpeg,png,webp',
+            'desc' => 'nullable',
         ];
     
         $messages = [
@@ -69,7 +69,7 @@ class KarierController extends Controller
 
         # Jika ada image baru
         if ($request->hasFile('image')) {
-            $fileCheck = 'required|max:1000|mimes:jpg,jpeg,png';
+            $fileCheck = 'required|max:5000|mimes:jpg,jpeg,png';
         } else {
             $fileCheck = '';
         }
@@ -83,7 +83,7 @@ class KarierController extends Controller
         $messages = [
             'judul.required' => 'Judul wajib diisi!',
             'image.required' => 'Judul wajib diisi!',
-            'desc.required' => 'Judul wajib diisi!',
+            'desc.min' => 'Deskripsi wajib diisi!.',
         ];
 
         $this->validate($request, $rules, $messages);
@@ -93,8 +93,7 @@ class KarierController extends Controller
             if (\File::exists('storage/karier/' . $karier->image)) {
                 \File::delete('storage/karier/' . $request->old_image);
             }
-            $fileName = time() . '.' . $request->image->extension();
-            $request->file('image')->storeAs('public/karier', $fileName);
+            $fileName = $request->file('image')->storePublicly('karier');
         }
 
         if ($request->hasFile('image')) {

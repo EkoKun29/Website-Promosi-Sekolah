@@ -33,7 +33,7 @@ class Appcontroller extends Controller
         $guru = Guru::orderBy('id', 'desc')->paginate(10);;
         return view('guru.index', compact('guru'));
     }
-
+    
     public function search(Request $request)
     {
         $searchTerm = $request->search;

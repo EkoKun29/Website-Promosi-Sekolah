@@ -14,13 +14,13 @@ class PhotoController extends Controller
 
     public function store(Request $request){
         $rules = [
-            'judul' => 'required',
-            'image' => 'sometimes|required|max:1000|mimes:jpg,jpeg,png,webp',
+            // 'judul' => 'required',
+            'image' => 'sometimes|required|max:5000|mimes:jpg,jpeg,png,webp',
             'kategori' => 'required',
         ];
     
         $messages = [
-            'judul.required' => 'Judul wajib diisi!',
+            // 'judul.required' => 'Judul wajib diisi!',
             'image.required' => 'Image wajib diisi!',
             'kategori.required' => 'Kategori wajib diisi',
         ];
@@ -32,7 +32,7 @@ class PhotoController extends Controller
              $fileName = $request->file('image')->storePublicly('photo');
         
             Photo::create([
-                'judul' => $request->judul,
+                // 'judul' => $request->judul,
                 'image' => $fileName,
                 'kategori' => $request->kategori,
             ]);
@@ -45,19 +45,19 @@ class PhotoController extends Controller
 
                 # Jika ada image baru
                 if ($request->hasFile('image')) {
-                    $fileCheck = 'required|max:1000|mimes:jpg,jpeg,png';
+                    $fileCheck = 'required|max:5000|mimes:jpg,jpeg,png';
                 } else {
                     $fileCheck = '';
                 }
         
                 $rules = [
-                    'judul' => 'required',
+                    // 'judul' => 'required',
                     'image' => $fileCheck,
                     'kategori' => 'required',
                 ];
         
                 $messages = [
-                    'judul.required' => 'Judul wajib diisi!',
+                    // 'judul.required' => 'Judul wajib diisi!',
                     'image.required' => 'Judul wajib diisi!',
                     'kategori.required' => 'Kategori wajib diisi',
                 ];
@@ -69,8 +69,7 @@ class PhotoController extends Controller
                     if (\File::exists('storage/photo/' . $photo->image)) {
                         \File::delete('storage/photo/' . $request->old_image);
                     }
-                    $fileName = time() . '.' . $request->image->extension();
-                    $request->file('image')->storeAs('public/photo', $fileName);
+                    $fileName = $request->file('image')->storePublicly('photo');
                 }
         
                 if ($request->hasFile('image')) {
@@ -80,7 +79,7 @@ class PhotoController extends Controller
                 }
 
                 $photo->update([
-                    'judul' => $request->judul,
+                    // 'judul' => $request->judul,
                     'image' => $checkFileName,
                     'kategori' => $request->kategori,
                 ]);

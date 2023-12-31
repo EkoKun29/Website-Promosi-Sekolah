@@ -4,7 +4,7 @@
     <div class="container col-xxl-8">
         <h4>Halaman Photo Kegiatan</h4>
 
-        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#uploadModal">Tambah Data</a>
+        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#uploadModal"> + Tambah Data</a>
 
         @if (session()->has('success'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -137,7 +137,7 @@
                         <select name="jurusan" class="form-select">
                             <option value="AKUNTANSI">AKUNTANSI</option>
                             <option value="TEKNIK ALAT BERAT">TEKNIK ALAT BERAT</option>
-                            <option value="TEKNIK AUDIO VISUAL">TEKNIK AUDIO VISUAL</option>
+                            <option value="TEKNIK AUDIO VIDEO">TEKNIK AUDIO VIDEO</option>
                             <option value="TEKNIK KOMPUTER JARINGAN">TEKNIK KOMPUTER JARINGAN</option>
                             <option value="TEKNIK KENDARAAN RINGAN">TEKNIK KENDARAAN RINGAN</option>
                             <option value="TEKNIK SEPEDA MOTOR">TEKNIK SEPEDA MOTOR</option>

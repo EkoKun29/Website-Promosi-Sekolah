@@ -4,7 +4,7 @@
     <div class="container col-xxl-8 ">
         <h4>Halaman Berita</h4>
 
-        <a href="{{ route('karier.create') }}" class="btn btn-primary">Buat Berita</a>
+        <a href="{{ route('karier.create') }}" class="btn btn-primary"> + Tambah Data</a>
 
         <div class="table-responsive">
             <table class="table table-bordered">

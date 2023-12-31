@@ -23,24 +23,16 @@ class BeritaController extends Controller
     public function store(Request $request) {
         $rules = [
             'judul' => 'required',
-            'image' => 'sometimes|required|max:1000|mimes:jpg,jpeg,png,webp',
-            'desc' => 'nullable|min:20',
+            'image' => 'sometimes|required|max:5000|mimes:jpg,jpeg,png,webp',
+            'desc' => 'nullable',
         ];
     
         $messages = [
             'judul.required' => 'Judul wajib diisi!',
             'image.required' => 'Image wajib diisi!',
-            'desc.min' => 'Deskripsi wajib diisi!.',
         ];
     
         $this->validate($request, $rules, $messages);
-    
-        // $fileName = null;
-    
-        // if ($request->hasFile('image')) {
-        //     $fileName = time() . '.' . $request->image->extension();
-        //     $request->file('image')->storeAs('public/artikel', $fileName);
-        // }
         
         $fileName = $request->file('image')->storePublicly('artikel');
          
@@ -71,7 +63,7 @@ class BeritaController extends Controller
 
         # Jika ada image baru
         if ($request->hasFile('image')) {
-            $fileCheck = 'required|max:1000|mimes:jpg,jpeg,png';
+            $fileCheck = 'required|max:5000|mimes:jpg,jpeg,png';
         } else {
             $fileCheck = '';
         }
@@ -79,13 +71,12 @@ class BeritaController extends Controller
         $rules = [
             'judul' => 'required',
             'image' => $fileCheck,
-            'desc' => 'required|min:20',
+            'desc' => 'nullable',
         ];
 
         $messages = [
             'judul.required' => 'Judul wajib diisi!',
             'image.required' => 'Judul wajib diisi!',
-            'desc.required' => 'Judul wajib diisi!',
         ];
 
         $this->validate($request, $rules, $messages);
@@ -95,8 +86,9 @@ class BeritaController extends Controller
             if (\File::exists('storage/artikel/' . $berita->image)) {
                 \File::delete('storage/artikel/' . $request->old_image);
             }
-            $fileName = time() . '.' . $request->image->extension();
-            $request->file('image')->storeAs('public/artikel', $fileName);
+            // $fileName = time() . '.' . $request->image->extension();
+            $fileName = $request->file('image')->storePublicly('artikel');
+            // $request->file('image')->storeAs('public/artikel', $fileName);
         }
 
         if ($request->hasFile('image')) {

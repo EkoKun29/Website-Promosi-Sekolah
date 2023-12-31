@@ -5,7 +5,7 @@
     <div class="container col-xxl-8">
         <h4>Halaman Photo Kegiatan</h4>
 
-        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#uploadModal">Upload Photo</a>
+        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#uploadModal"> + Upload Photo</a>
 
         @if (session()->has('success'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -31,7 +31,7 @@
                     <tr>
                         <th>#</th>
                         <th>Image</th>
-                        <th>Judul</th>
+                        <!--<th>Judul</th>-->
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -42,7 +42,7 @@
                         <td>
                             <img src="{{ $p->image_url }}" height="150" alt="">
                         </td>
-                        <td>{{ $p->judul }}</td>
+                        <!--<td>{{ $p->judul }}</td>-->
                         <td>
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editModal{{ $p->id }}">Edit</a>
                             <form action="{{ route('photo.hapus', $p->id) }}" method="POST" class="d-inline">
@@ -83,9 +83,19 @@
                         <input type="file" name="image" class="form-control">
                     </div>
 
+                    <!--<div class="form-group mb-3">-->
+                    <!--    <label for="">Nama Kegiatan</label>-->
+                    <!--    <input type="text" name="judul" class="form-control" value="{{ $p->judul }}">-->
+                    <!--</div>-->
+                    
                     <div class="form-group mb-3">
-                        <label for="">Nama Kegiatan</label>
-                        <input type="text" name="judul" class="form-control" value="{{ $p->judul }}">
+                        <label for="">Kategori</label>
+                        <select name="kategori" class="form-select">
+                            <option value="KEGIATAN">KEGIATAN</option>
+                            <option value="PRESTASI">PRESTASI</option>
+                            <option value="FASILITAS">FASILITAS</option>
+                            <!-- Tambahkan lebih banyak option sesuai dengan jurusan yang diinginkan -->
+                        </select>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Update</button>
@@ -114,10 +124,10 @@
                         <input type="file" name="image" class="form-control">
                     </div>
 
-                    <div class="form-group mb-3">
-                        <label for="">Nama Kegiatan</label>
-                        <input type="text" name="judul" class="form-control">
-                    </div>
+                    <!--<div class="form-group mb-3">-->
+                    <!--    <label for="">Nama Kegiatan</label>-->
+                    <!--    <input type="text" name="judul" class="form-control">-->
+                    <!--</div>-->
 
                     <div class="form-group mb-3">
                         <label for="">Kategori</label>

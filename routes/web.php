@@ -55,7 +55,6 @@ Route::get('/Guru/search', [Appcontroller::class, 'search'])->name('guru.search'
 //-------------------------------Kontak----------------------------------
 Route::get('/Hubungi-Kami', [Kontakcontroller::class, 'index'])->name('contac');
 
-
 //-------------------------------Konsentrasi----------------------------------
 Route::get('/Konsentrasi', [Appcontroller::class, 'konsentrasi'])->name('app.konsentrasi');
 

@@ -30,7 +30,7 @@
                                             <li><a href="{{ route('photo') }}">GALERI</a></li>
                                             <li><a href="{{ route('guru') }}">GURU</a></li>
                                             <li><a href="{{ route('konsentrasi') }}">KONSENTRASI</a></li>
-                                            <li><a href="{{ route('contac') }}">HUBUNGI KAMI</a></li>
+                                            <!--<li><a href="contact.html">HUBUNGI KAMI</a></li>-->
                                             <li><a href="{{ route('karier') }}">KARIER</a></li>
                                             <li>
                                                 <form action="{{ route('logout') }}" method="POST">
@@ -78,7 +78,7 @@
                         @endif
                         @else
                         <div class="col-xl-2 col-lg-2">
-                            <div class="logo bg-light p-3"> <!-- Tambahkan kelas bg-light dan p-3 untuk latar belakang terang -->
+                            <div class="logo"> <!-- Tambahkan kelas bg-light dan p-3 untuk latar belakang terang -->
                                 <a href="{{ route('home') }}">
                                     <div class="logo-container">
                                         <img src="{{ asset('assets/img/LOGO_KESUMA.png')}}" height="70" width="55" alt="">
@@ -88,40 +88,58 @@
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-3">
-                            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-aos="fade-left">
-                                <div class="container">
-                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                        <span class="navbar-toggler-icon"></span>
-                                    </button>
-                                    <div class="collapse navbar-collapse" id="navbarNav">
-                                        <ul class="navbar-nav ml-auto">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('_profile') }}">PROFILE</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('app.berita') }}">BERITA</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('app.photo') }}">GALERI</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('app.guru') }}">GURU</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('app.konsentrasi') }}">KONSENTRASI</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('contac') }}">HUBUNGI KAMI</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('app.karier') }}">KARIER</a>
-                                            </li>
+                            <div class="menu-wrapper d-flex align-items-center justify-content-end">
+                                <!-- Main-menu -->
+                                <div class="main-menu d-none d-lg-block">
+                                    <nav> 
+                                        <ul id="navigation">                                                                                          
+                                            <li><a href="{{ route('_profile') }}">PROFILE</a></li>
+                                            <li><a href="{{ route('app.berita') }}">BERITA</a></li>
+                                            <li><a href="{{ route('app.photo') }}">GALERI</a></li>
+                                            <li><a href="{{ route('app.guru') }}">GURU</a></li>
+                                            <li><a href="{{ route('app.konsentrasi') }}">KONSENTRASI</a></li>
+                                            <li><a href="{{ route('contac') }}">HUBUNGI KAMI</a></li>
+                                            <li><a href="{{ route('app.karier') }}">KARIER</a></li>
                                         </ul>
-                                    </div>
+                                    </nav>
                                 </div>
-                            </nav>
-                        </div>
+                            </div>
+                        </div> 
+                        <!--<div class="col-xl-10 col-lg-3">-->
+                        <!--    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-aos="fade-left">-->
+                        <!--        <div class="container">-->
+                        <!--            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"-->
+                        <!--                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">-->
+                        <!--                <span class="navbar-toggler-icon"></span>-->
+                        <!--            </button>-->
+                        <!--            <div class="collapse navbar-collapse" id="navbarNav">-->
+                        <!--                <ul class="navbar-nav ml-auto">-->
+                        <!--                    <li class="nav-item">-->
+                        <!--                        <a class="nav-link" href="{{ route('_profile') }}">PROFILE</a>-->
+                        <!--                    </li>-->
+                        <!--                    <li class="nav-item">-->
+                        <!--                        <a class="nav-link" href="{{ route('app.berita') }}">BERITA</a>-->
+                        <!--                    </li>-->
+                        <!--                    <li class="nav-item">-->
+                        <!--                        <a class="nav-link" href="{{ route('app.photo') }}">GALERI</a>-->
+                        <!--                    </li>-->
+                        <!--                    <li class="nav-item">-->
+                        <!--                        <a class="nav-link" href="{{ route('app.guru') }}">GURU</a>-->
+                        <!--                    </li>-->
+                        <!--                    <li class="nav-item">-->
+                        <!--                        <a class="nav-link" href="{{ route('app.konsentrasi') }}">KONSENTRASI</a>-->
+                        <!--                    </li>-->
+                        <!--                    <li class="nav-item">-->
+                        <!--                        <a class="nav-link" href="{{ route('contac') }}">HUBUNGI KAMI</a>-->
+                        <!--                    </li>-->
+                        <!--                    <li class="nav-item">-->
+                        <!--                        <a class="nav-link" href="{{ route('app.karier') }}">KARIER</a>-->
+                        <!--                    </li>-->
+                        <!--                </ul>-->
+                        <!--            </div>-->
+                        <!--        </div>-->
+                        <!--    </nav>-->
+                        <!--</div>-->
                         
                         @endauth
                         <!-- Mobile Menu -->

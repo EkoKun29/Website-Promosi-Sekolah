@@ -9,8 +9,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
      
     @if (Request::segment(1) == '')
-        <meta property="og:title" content="Pesantren Al Hijrah" />
-        <meta name="description" content="Pesantren Moderan dengan Fasilitas Lengkap" />
+        <meta property="og:title" content="SMK KESUMA MARGOYOSO PATI" />
+        <meta name="description" content="Sekolah Moderan dengan Fasilitas Lengkap" />
         <meta property="og:url" content="http://smkkesumamargoyoso.com" />
         <meta property="og:description" content="SMK KESUMA MARGOYOSO" />
         <meta property="og:image" content="{{ asset('assets/img/LOGO-KESUMA.ico') }}" />
@@ -19,7 +19,7 @@
     @elseif (Request::segment(1) == 'detail')
         <meta property="og:title" content="{{ $berita->judul }}" />
         <meta name="description" content="{{ $berita->judul }}" />
-        <meta property="og:url" content="http://pesantrenalhijrah.com/detail/{{ $berita->slug }}" />
+        <meta property="og:url" content="http://smkkesumamargoyoso.sch.id/" />
         <meta property="og:description" content="{{ $berita->judul }}" />
         @if ($berita->image)
             <meta property="og:image" content="{{ asset('storage/artikel/' . $berita->image) }}" />

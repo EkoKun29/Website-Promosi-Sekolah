@@ -4,7 +4,7 @@
     <div class="container col-xxl-8">
         <h4>Halaman Profil Guru</h4>
 
-        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#uploadModal">Tambah Data</a>
+        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#uploadModal"> + Tambah Data</a>
 
         @if (session()->has('success'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">

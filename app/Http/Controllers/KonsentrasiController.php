@@ -16,8 +16,8 @@ class KonsentrasiController extends Controller
         $rules = [
             'nama' => 'required',
             'jurusan' => 'required',
-            'image' => 'sometimes|required|max:1000|mimes:jpg,jpeg,png,webp',
-            'desc' => 'nullable|min:20',
+            'image' => 'sometimes|required|max:5000|mimes:jpg,jpeg,png,webp',
+            'desc' => 'nullable',
         ];
     
         $messages = [
@@ -46,7 +46,7 @@ class KonsentrasiController extends Controller
 
                 # Jika ada image baru
                 if ($request->hasFile('image')) {
-                    $fileCheck = 'required|max:1000|mimes:jpg,jpeg,png';
+                    $fileCheck = 'required|max:5000|mimes:jpg,jpeg,png';
                 } else {
                     $fileCheck = '';
                 }
@@ -55,14 +55,14 @@ class KonsentrasiController extends Controller
                     'nama' => 'required',
                     'jurusan' => 'required',
                     'image' => $fileCheck,
-                    'desc' => 'required',
+                    'desc' => 'nullable',
                 ];
         
                 $messages = [
                     'nama.required' => 'Nama wajib diisi!',
                     'jurusan.required' => 'Bidang wajib diisi!',
                     'image.required' => 'Image wajib diisi!',
-                    'desc.required' => 'Deskripsi wajib diisi!',
+                    'desc.min' => 'Deskripsi wajib diisi!',
                 ];
         
                 $this->validate($request, $rules, $messages);
@@ -72,8 +72,7 @@ class KonsentrasiController extends Controller
                     if (\File::exists('storage/konsentrasi/' . $konsentrasi->image)) {
                         \File::delete('storage/konsentrasi/' . $konsentrasi->old_image);
                     }
-                    $fileName = time() . '.' . $request->image->extension();
-                    $request->file('image')->storeAs('public/konsentrasi', $fileName);
+                    $fileName = $request->file('image')->storePublicly('konsentrasi');
                 }
         
                 if ($request->hasFile('image')) {

@@ -30,21 +30,6 @@
 /* line 34, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_color.scss */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/* .section-foto{
-  background-attachment: fixed;
-  background-position: top;
-  background-size:cover;
-  height: 500px;
-  width:100px;
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.parallax{
-  background-image: ;
-} */
 
 .white-bg {
   background: #ffffff;
@@ -107,7 +92,6 @@
 .theme-color {
   color: #14435c;
 }
-
 
 
 /*------------------- Responsive --------------------------*/
@@ -312,6 +296,7 @@ p {
 }
 
 /* line 34, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
+
 .single-brand.slick-slide {
   outline: 0;
 }
@@ -742,28 +727,6 @@ a:hover {
   height: 400px;
 }
 
-#hero-second{
-  background-image: url('../../assets/img/guru.JPG');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 400px;
-}
-
-
-.hero-title{
-  padding-top: 100px;
-}
-
-.hero-text{
-  font-size: 75px;
-  font-weight: 600;
-}
-
-.hero-btn {
-  padding: 30px 38px;
-}
-
 /* Tampilan default */
 #hero-second {
   background-image: url('../../assets/img/guru.JPG');
@@ -778,6 +741,9 @@ a:hover {
 }
 
 .hero-text {
+    /*background-image: linear-gradient(90deg, transparent, transparent 50%, yellow 50%, yellow);*/
+    /*  display: inline-block;*/
+    /*    padding: 5px 10px;*/
   font-size: 75px;
   font-weight: 600;
 }
@@ -786,8 +752,8 @@ a:hover {
   padding: 30px 38px;
 }
 
-/* Responsif untuk layar yang lebih kecil */
-@media screen and (max-width: 768px) {
+/* Responsif untuk layar yang lebih kecil, misalnya ponsel */
+@media screen and (max-width: 767px) {
   #hero-second {
     height: 300px; /* Ubah tinggi gambar latar belakang */
   }
@@ -797,8 +763,7 @@ a:hover {
   }
 
   .hero-text {
-    font-size: 50px; /* Kurangi ukuran teks */
-    font-weight: 500;
+    font-size: 40px; /* Kurangi ukuran teks */
   }
 
   .hero-btn {
@@ -806,7 +771,7 @@ a:hover {
   }
 }
 
-/* Responsif untuk layar yang sangat kecil, misalnya ponsel */
+/* Responsif untuk layar yang sangat kecil, misalnya ponsel vertikal */
 @media screen and (max-width: 480px) {
   #hero-second {
     height: 200px; /* Tinggi gambar latar belakang lebih kecil */
@@ -818,7 +783,6 @@ a:hover {
 
   .hero-text {
     font-size: 30px; /* Kurangi ukuran teks lebih banyak */
-    font-weight: 300;
   }
 
   .hero-btn {
@@ -4144,7 +4108,7 @@ hero-btn {
   content: "";
   width: 100%;
   height: 0;
-  background: #3EB489;
+  background:#3EB489;
   -webkit-transition: all 0.4s ease-out 0s;
   -moz-transition: all 0.4s ease-out 0s;
   -ms-transition: all 0.4s ease-out 0s;
@@ -4158,7 +4122,7 @@ hero-btn {
 
 /* line 29, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_categories.scss */
 .categories-area .single-cat .cat-icon span {
-  color: #3EB489;
+  color:#3EB489;
   font-size: 65px;
   margin-bottom: 30px;
   display: block;
@@ -4195,7 +4159,7 @@ hero-btn {
 /* line 53, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_categories.scss */
 .categories-area .single-cat .cat-cap p {
   margin-bottom: 36px;
-  color: #57667e;
+  color: #3EB489;
   font-size: 16px;
   -webkit-transition: all 0.2s ease-out 0s;
   -moz-transition: all 0.2s ease-out 0s;
@@ -4911,14 +4875,14 @@ hero-btn {
   font-size: 18px;
   margin-bottom: 38px;
   font-weight: 500;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 
 /* line 52, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_footer.scss */
 .footer-area .footer-top .single-footer-caption .footer-tittle ul li {
   color: #bdbdbd;
   margin-bottom: 15px;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
 }
 
 /* line 56, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_footer.scss */
@@ -8644,3 +8608,7 @@ del {
   opacity: 1;
   top: calc(50% - 30px);
 }
+
+/* search*/
+/* Gaya default untuk tampilan desktop */
+

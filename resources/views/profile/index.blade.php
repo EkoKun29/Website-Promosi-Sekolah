@@ -4,7 +4,7 @@
     <section id="hero-satu" class="px-0">
         <div class="container text-center text-white">
             <div class="hero-title" data-aos="fade-right">
-            <div class="hero-text">Profile <br> SMK Kesuma Margoyoso Pati</div>
+            <div class="hero-text">PROFIL <br> SMK KESUMA MARGOYOSO</div>
             </div>
         </div>
     </section>
@@ -61,10 +61,10 @@
                 </p></h3>
                 <ul>
                   <li><i class="fa fa-check"></i> Meningkatkan Muatan Keagamaan </li>
-                  <li><i class="fa fa-check"></i> Meningkatkan Pelatihan Fisik Dan Mental </li>
-                  <li><i class="fa fa-check"></i> Pembiasaan Budaya Industri Di Sekolah </li>
+                  <li><i class="fa fa-check"></i> Meningkatkan Pelatihan Fisik dan Mental </li>
+                  <li><i class="fa fa-check"></i> Pembiasaan Budaya Industri di Sekolah </li>
                   <li><i class="fa fa-check"></i> Melaksanakan Peringatan Hari Besar Nasional </li>
-                  <li><i class="fa fa-check"></i> Meningkatkan Keikutsertaan Dalam Kegiatan Lomba </li>
+                  <li><i class="fa fa-check"></i> Meningkatkan Keikutsertaan dalam Kegiatan Lomba </li>
                 </ul>
             </div>
           </div>

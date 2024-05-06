@@ -40,7 +40,8 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>
-                            <img src="{{ $p->image_url }}" height="150" alt="">
+                            <img src="{{ url('storage/photo/' . basename($p->image_url)) }}" height="150" alt="">
+
                         </td>
                         <!--<td>{{ $p->judul }}</td>-->
                         <td>
@@ -77,7 +78,7 @@
                     <div class="form-group mb-3">
                         <label for="">Pilih Photo</label>
                         <div class="col-lg-4">
-                            <img src="{{ asset('storage/photo/' . $p->image) }}" height="150" alt="">
+                            <img src="{{ asset('/storage/photo/' . $p->image) }}" height="150" alt="">
                         </div>
                         <input type="hidden" name="old_image" value="{{ $p->image }}">
                         <input type="file" name="image" class="form-control">

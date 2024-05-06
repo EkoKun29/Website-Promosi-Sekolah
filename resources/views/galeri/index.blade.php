@@ -44,7 +44,7 @@
                 <div class="single-team mb-30">
                     <div class="team-img">
                 <a class="image-link" href="{{ $p->image_url }}">
-                    <img src="{{ $p->image_url }}" class="img-fluid" alt="">
+                    <img src="{{ url('storage/photo/' . basename($p->image_url)) }}" class="img-fluid" alt="">
                     
                 </a>
                     </div>

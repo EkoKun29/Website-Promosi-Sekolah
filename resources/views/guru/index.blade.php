@@ -71,7 +71,9 @@
             @foreach ($guru as $g)
             <div class="col-lg-6">
                 <div class="bg-white rounded-3 shadow p-3 d-flex align-items-center">
-                  <img src="{{ $g->image_url }}" height="200" width="200" alt="">
+                    <img src="{{ url('storage/guru/' . basename($g->image_url)) }}"  height="200" width="200" alt="">
+{{-- 
+                  <img src="{{ $g->image_url }}" height="200" width="200" alt=""> --}}
                   <div class="py-3 ms-3">
                     <h5 class="text-start"> <b> {{ $g->name }} </b> </h5>
                     <h6 class="text-start"> {{ $g->bidang }}</h6>

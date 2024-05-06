@@ -40,7 +40,9 @@ class KarierController extends Controller
         //     $fileName = time() . '.' . $request->image->extension();
         //     $request->file('image')->storeAs('public/karier', $fileName);
         // }
-         $fileName = $request->file('image')->storePublicly('karier');
+        $fileName = time() . '.' . $request->image->extension();
+            $request->file('image')->storeAs('public/karier', $fileName);
+        //  $fileName = $request->file('image')->storePublicly('karier');
     
         $content = $request->input('desc') ?: '';
     

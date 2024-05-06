@@ -15,7 +15,9 @@
             @foreach($karier as $item)
             <div class="col-lg-4">
                 <div class="card border-0">
-                    <img src="{{ $item->image_url }}" alt="" class="img-fluid">
+                    <img src="{{ url('storage/karier/' . basename($item->image_url)) }}" alt="" class="img-fluid">
+
+                    {{-- <img src="{{ $item->image_url }}" alt="" class="img-fluid"> --}}
                     <div class="services-img">
                         <!-- Apakah ada yang ingin ditampilkan di dalam gambar? -->
                     </div>

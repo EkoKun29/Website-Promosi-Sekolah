@@ -27,9 +27,9 @@ class PhotoController extends Controller
     
         $this->validate($request, $rules, $messages);
     
-            // $fileName = time() . '.' . $request->image->extension();
-            // $request->file('image')->storeAs('public/photo', $fileName);
-             $fileName = $request->file('image')->storePublicly('photo');
+            $fileName = time() . '.' . $request->image->extension();
+            $request->file('image')->storeAs('public/photo', $fileName);
+            //  $fileName = $request->file('image')->storePublicly('photo');
         
             Photo::create([
                 // 'judul' => $request->judul,

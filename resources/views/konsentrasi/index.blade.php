@@ -42,7 +42,9 @@
                 <div class="single-team mb-30">
                     <div class="team-img">
                         <a class="image-link" href="{{ $ks->image_url }}">
-                            <img src="{{ $ks->image_url }}" class="img-fluid" alt="">
+                    <img src="{{ url('storage/konsentrasi/' . basename($ks->image_url)) }}" alt="" class="img-fluid">
+
+                            {{-- <img src="{{ $ks->image_url }}" class="img-fluid" alt=""> --}}
                 </a>
                 <h4><b>{{ $ks->nama }}</b></h4>
             <h6>{{ $ks->jurusan }}</h6>
